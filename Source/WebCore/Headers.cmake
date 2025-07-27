@@ -171,14 +171,6 @@ set(WebCore_PRIVATE_FRAMEWORK_HEADERS
     accessibility/isolatedtree/AXIsolatedTree.h
     accessibility/isolatedtree/AXIsolatedTreeNode.h
 
-    animation/CSSPropertyBlendingClient.h
-    animation/CompositeOperation.h
-    animation/EffectTiming.h
-    animation/FillMode.h
-    animation/IterationCompositeOperation.h
-    animation/KeyframeAnimationOptions.h
-    animation/KeyframeEffectOptions.h
-    animation/PlaybackDirection.h
 
     bindings/IDLTypes.h
 
@@ -824,8 +816,6 @@ set(WebCore_PRIVATE_FRAMEWORK_HEADERS
     page/WheelEventTestTrigger.h
     page/WindowFeatures.h
 
-    page/animation/AnimationBase.h
-    page/animation/CSSAnimationController.h
 
     page/csp/ContentSecurityPolicy.h
     page/csp/ContentSecurityPolicyClient.h

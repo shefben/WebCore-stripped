@@ -66,7 +66,6 @@ set(WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${WEBCORE_DIR}/Modules/webvr"
     "${WEBCORE_DIR}/accessibility"
     "${WEBCORE_DIR}/accessibility/isolatedtree"
-    "${WEBCORE_DIR}/animation"
     "${WEBCORE_DIR}/bindings"
     "${WEBCORE_DIR}/bindings/js"
     "${WEBCORE_DIR}/contentextensions"
@@ -105,7 +104,6 @@ set(WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${WEBCORE_DIR}/loader/icon"
     "${WEBCORE_DIR}/mathml"
     "${WEBCORE_DIR}/page"
-    "${WEBCORE_DIR}/page/animation"
     "${WEBCORE_DIR}/page/csp"
     "${WEBCORE_DIR}/page/scrolling"
     "${WEBCORE_DIR}/platform"
@@ -537,27 +535,6 @@ set(WebCore_NON_SVG_IDL_FILES
     accessibility/AccessibilityRole.idl
     accessibility/AriaAttributes.idl
 
-    animation/Animatable.idl
-    animation/AnimationEffect.idl
-    animation/EffectTiming.idl
-    animation/AnimationPlaybackEvent.idl
-    animation/AnimationPlaybackEventInit.idl
-    animation/AnimationTimeline.idl
-    animation/CSSAnimation.idl
-    animation/CSSTransition.idl
-    animation/CompositeOperation.idl
-    animation/CompositeOperationOrAuto.idl
-    animation/ComputedEffectTiming.idl
-    animation/DocumentTimeline.idl
-    animation/DocumentTimelineOptions.idl
-    animation/FillMode.idl
-    animation/IterationCompositeOperation.idl
-    animation/KeyframeAnimationOptions.idl
-    animation/KeyframeEffect.idl
-    animation/KeyframeEffectOptions.idl
-    animation/OptionalEffectTiming.idl
-    animation/PlaybackDirection.idl
-    animation/WebAnimation.idl
 
 
     css/CSSFontFaceRule.idl
