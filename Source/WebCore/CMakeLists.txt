@@ -66,7 +66,6 @@ set(WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${WEBCORE_DIR}/cssjit"
     "${WEBCORE_DIR}/dom"
     "${WEBCORE_DIR}/dom/messageports"
-    "${WEBCORE_DIR}/domjit"
     "${WEBCORE_DIR}/editing"
     "${WEBCORE_DIR}/fileapi"
     "${WEBCORE_DIR}/html"
@@ -1200,14 +1199,6 @@ WEBKIT_MAKE_FORWARDING_HEADERS(WebCore
 MAKE_HASH_TOOLS(${WEBCORE_DIR}/platform/ColorData)
 list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/ColorData.cpp)
 
-# Generate DOMJITAbstractHeapRepository.h
-add_custom_command(
-    OUTPUT ${WebCore_DERIVED_SOURCES_DIR}/DOMJITAbstractHeapRepository.h
-    MAIN_DEPENDENCY domjit/DOMJITAbstractHeapRepository.yaml
-    DEPENDS ${WEBCORE_DIR}/domjit/generate-abstract-heap.rb
-    COMMAND ${RUBY_EXECUTABLE} ${WEBCORE_DIR}/domjit/generate-abstract-heap.rb ${WEBCORE_DIR}/domjit/DOMJITAbstractHeapRepository.yaml ${WebCore_DERIVED_SOURCES_DIR}/DOMJITAbstractHeapRepository.h
-    VERBATIM)
-list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/DOMJITAbstractHeapRepository.h)
 
 # Generate HTML entity table
 add_custom_command(
