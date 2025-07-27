@@ -151,7 +151,6 @@ set(WebCore_FORWARDING_HEADERS_DIRECTORIES
     .
     accessibility
     bindings
-    bridge
     contentextensions
     css
     dom
@@ -181,8 +180,6 @@ set(WebCore_FORWARDING_HEADERS_DIRECTORIES
     Modules/notifications
     Modules/webdatabase
     bindings/js
-    bridge/c
-    bridge/jsc
     css/parser
     history/cf
     html/forms
