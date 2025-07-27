@@ -9,14 +9,12 @@ set(WebCore_PRIVATE_FRAMEWORK_HEADERS
     Modules/applepay/PaymentMerchantSession.h
     Modules/applepay/PaymentMethod.h
 
-    Modules/applicationmanifest/ApplicationManifest.h
     Modules/applicationmanifest/ApplicationManifestParser.h
 
     Modules/cache/CacheQueryOptions.h
     Modules/cache/CacheStorageConnection.h
     Modules/cache/DOMCacheEngine.h
 
-    Modules/encryptedmedia/CDMClient.h
 
     Modules/fetch/FetchBodyConsumer.h
     Modules/fetch/FetchBodySource.h
@@ -279,7 +277,6 @@ set(WebCore_PRIVATE_FRAMEWORK_HEADERS
     contentextensions/Term.h
     contentextensions/URLFilterParser.h
 
-    crypto/SerializedCryptoKeyWrap.h
 
     css/CSSCalculationValue.h
     css/CSSCustomPropertyValue.h
@@ -683,7 +680,6 @@ set(WebCore_PRIVATE_FRAMEWORK_HEADERS
     loader/PolicyChecker.h
     loader/ProgressTracker.h
     loader/ProgressTrackerClient.h
-    loader/ResourceCryptographicDigest.h
     loader/ResourceLoadInfo.h
     loader/ResourceLoadNotifier.h
     loader/ResourceLoadObserver.h
@@ -1106,7 +1102,6 @@ set(WebCore_PRIVATE_FRAMEWORK_HEADERS
     platform/graphics/iso/ISOProtectionSchemeInfoBox.h
     platform/graphics/iso/ISOSchemeInformationBox.h
     platform/graphics/iso/ISOSchemeTypeBox.h
-    platform/graphics/iso/ISOTrackEncryptionBox.h
 
     platform/graphics/libwpe/PlatformDisplayLibWPE.h
 

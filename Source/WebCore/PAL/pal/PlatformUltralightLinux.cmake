@@ -8,7 +8,6 @@ list(APPEND PAL_PUBLIC_HEADERS
 
 list(APPEND PAL_SOURCES
     #crypto/gcrypt/CryptoDigestGCrypt.cpp
-    crypto/openssl/CryptoDigestOpenSSL.cpp
 
     system/ClockGeneric.cpp
 
@@ -23,6 +22,3 @@ list(APPEND PAL_SOURCES
     system/Sound.cpp
 )
 
-list(APPEND PAL_SYSTEM_INCLUDE_DIRECTORIES ${OPENSSL_INCLUDE_DIR})
-
-list(APPEND PAL_LIBRARIES ${OPENSSL_CRYPTO_LIBRARY})

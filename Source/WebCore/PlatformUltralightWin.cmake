@@ -225,7 +225,6 @@ list(APPEND WebCore_LIBRARIES
     brotlicommon
     brotlidec
     brotlienc
-    crypto
     freetype
     harfbuzz
     harfbuzz-icu
@@ -234,8 +233,6 @@ list(APPEND WebCore_LIBRARIES
     libpng16_static
     nghttp2_static
     sqlite3
-    ssl
-    tls
     xml2
     xslt
     zlibstatic

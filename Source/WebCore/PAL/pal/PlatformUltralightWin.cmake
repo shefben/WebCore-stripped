@@ -7,7 +7,6 @@ list(APPEND PAL_SOURCES
 
     win/LoggingWin.cpp
 
-    crypto/openssl/CryptoDigestOpenSSL.cpp
 )
 
 list(APPEND PAL_INCLUDE_DIRECTORIES

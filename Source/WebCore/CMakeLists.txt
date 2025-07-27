@@ -32,8 +32,6 @@ set(WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${WEBCORE_DIR}/Modules/beacon"
     "${WEBCORE_DIR}/Modules/cache"
     "${WEBCORE_DIR}/Modules/credentialmanagement"
-    "${WEBCORE_DIR}/Modules/encryptedmedia"
-    "${WEBCORE_DIR}/Modules/encryptedmedia/legacy"
     "${WEBCORE_DIR}/Modules/entriesapi"
     "${WEBCORE_DIR}/Modules/fetch"
     "${WEBCORE_DIR}/Modules/geolocation"
@@ -72,10 +70,6 @@ set(WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${WEBCORE_DIR}/bindings"
     "${WEBCORE_DIR}/bindings/js"
     "${WEBCORE_DIR}/contentextensions"
-    "${WEBCORE_DIR}/crypto"
-    "${WEBCORE_DIR}/crypto/algorithms"
-    "${WEBCORE_DIR}/crypto/keys"
-    "${WEBCORE_DIR}/crypto/parameters"
     "${WEBCORE_DIR}/css"
     "${WEBCORE_DIR}/css/parser"
     "${WEBCORE_DIR}/css/typedom"
@@ -117,7 +111,6 @@ set(WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${WEBCORE_DIR}/platform"
     "${WEBCORE_DIR}/platform/animation"
     "${WEBCORE_DIR}/platform/audio"
-    "${WEBCORE_DIR}/platform/encryptedmedia"
     "${WEBCORE_DIR}/platform/gamepad"
     "${WEBCORE_DIR}/platform/graphics"
     "${WEBCORE_DIR}/platform/graphics/cpu/arm"
@@ -188,7 +181,6 @@ set(WebCore_IDL_INCLUDES
     Modules/airplay
     Modules/cache
     Modules/credentialmanagement
-    Modules/encryptedmedia/legacy
     Modules/entriesapi
     Modules/fetch
     Modules/geolocation
@@ -567,36 +559,6 @@ set(WebCore_NON_SVG_IDL_FILES
     animation/PlaybackDirection.idl
     animation/WebAnimation.idl
 
-    crypto/CryptoAlgorithmParameters.idl
-    crypto/CryptoKey.idl
-    crypto/CryptoKeyPair.idl
-    crypto/CryptoKeyUsage.idl
-    crypto/JsonWebKey.idl
-    crypto/RsaOtherPrimesInfo.idl
-    crypto/SubtleCrypto.idl
-
-    crypto/keys/CryptoAesKeyAlgorithm.idl
-    crypto/keys/CryptoEcKeyAlgorithm.idl
-    crypto/keys/CryptoHmacKeyAlgorithm.idl
-    crypto/keys/CryptoKeyAlgorithm.idl
-    crypto/keys/CryptoRsaHashedKeyAlgorithm.idl
-    crypto/keys/CryptoRsaKeyAlgorithm.idl
-
-    crypto/parameters/AesCbcCfbParams.idl
-    crypto/parameters/AesCtrParams.idl
-    crypto/parameters/AesGcmParams.idl
-    crypto/parameters/AesKeyParams.idl
-    crypto/parameters/EcKeyParams.idl
-    crypto/parameters/EcdhKeyDeriveParams.idl
-    crypto/parameters/EcdsaParams.idl
-    crypto/parameters/HkdfParams.idl
-    crypto/parameters/HmacKeyParams.idl
-    crypto/parameters/Pbkdf2Params.idl
-    crypto/parameters/RsaHashedImportParams.idl
-    crypto/parameters/RsaHashedKeyGenParams.idl
-    crypto/parameters/RsaKeyGenParams.idl
-    crypto/parameters/RsaOaepParams.idl
-    crypto/parameters/RsaPssParams.idl
 
     css/CSSFontFaceRule.idl
     css/CSSImportRule.idl
@@ -1209,60 +1171,6 @@ set(WebCoreTestSupport_LIBRARIES
     JavaScriptCore${DEBUG_SUFFIX}
 )
 
-if (ENABLE_LEGACY_ENCRYPTED_MEDIA)
-    list(APPEND WebCore_SOURCES
-        Modules/encryptedmedia/legacy/LegacyCDM.cpp
-        Modules/encryptedmedia/legacy/LegacyCDMPrivateClearKey.cpp
-        Modules/encryptedmedia/legacy/LegacyCDMPrivateMediaPlayer.cpp
-        Modules/encryptedmedia/legacy/LegacyCDMSessionClearKey.cpp
-
-        Modules/encryptedmedia/legacy/WebKitMediaKeyMessageEvent.cpp
-        Modules/encryptedmedia/legacy/WebKitMediaKeyNeededEvent.cpp
-        Modules/encryptedmedia/legacy/WebKitMediaKeySession.cpp
-        Modules/encryptedmedia/legacy/WebKitMediaKeys.cpp
-    )
-    list(APPEND WebCoreTestSupport_SOURCES
-        testing/LegacyMockCDM.cpp
-    )
-    list(APPEND WebCore_IDL_FILES
-        Modules/encryptedmedia/legacy/WebKitMediaKeyMessageEvent.idl
-        Modules/encryptedmedia/legacy/WebKitMediaKeyNeededEvent.idl
-        Modules/encryptedmedia/legacy/WebKitMediaKeySession.idl
-        Modules/encryptedmedia/legacy/WebKitMediaKeys.idl
-
-        html/WebKitMediaKeyError.idl
-    )
-endif ()
-
-if (ENABLE_ENCRYPTED_MEDIA)
-    list(APPEND WebCore_SOURCES
-        Modules/encryptedmedia/CDM.cpp
-        Modules/encryptedmedia/InitDataRegistry.cpp
-        Modules/encryptedmedia/MediaKeyMessageEvent.cpp
-        Modules/encryptedmedia/MediaKeySession.cpp
-        Modules/encryptedmedia/MediaKeyStatusMap.cpp
-        Modules/encryptedmedia/MediaKeySystemAccess.cpp
-        Modules/encryptedmedia/MediaKeys.cpp
-        Modules/encryptedmedia/NavigatorEME.cpp
-
-        html/MediaEncryptedEvent.cpp
-    )
-    list(APPEND WebCore_IDL_FILES
-        Modules/encryptedmedia/MediaKeyEncryptionScheme.idl
-        Modules/encryptedmedia/MediaKeyMessageEvent.idl
-        Modules/encryptedmedia/MediaKeySession.idl
-        Modules/encryptedmedia/MediaKeySessionType.idl
-        Modules/encryptedmedia/MediaKeyStatusMap.idl
-        Modules/encryptedmedia/MediaKeySystemAccess.idl
-        Modules/encryptedmedia/MediaKeySystemConfiguration.idl
-        Modules/encryptedmedia/MediaKeySystemMediaCapability.idl
-        Modules/encryptedmedia/MediaKeys.idl
-        Modules/encryptedmedia/MediaKeysRequirement.idl
-        Modules/encryptedmedia/NavigatorEME.idl
-
-        html/MediaEncryptedEvent.idl
-    )
-endif ()
 
 list(APPEND WebCore_CSS_VALUE_KEYWORDS
     ${WEBCORE_DIR}/css/SVGCSSValueKeywords.in
