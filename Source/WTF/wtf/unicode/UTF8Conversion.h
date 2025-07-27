@@ -25,7 +25,7 @@
 
 #pragma once
 
-#include <unicode/utypes.h>
+#include "UnicodeMacros.h"
 #include <wtf/text/LChar.h>
 
 namespace WTF {

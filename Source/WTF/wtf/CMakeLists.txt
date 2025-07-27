@@ -495,15 +495,10 @@ endif ()
 
 list(APPEND WTF_SOURCES
     unicode/CollatorDefault.cpp
-    unicode/icu/CollatorICU.cpp
 )
 set(WTF_SYSTEM_INCLUDE_DIRECTORIES
-    ${ICU_INCLUDE_DIRS}
 )
 list(APPEND WTF_LIBRARIES
-    ${ICU_DATA_LIBRARIES}
-    ${ICU_I18N_LIBRARIES}
-    ${ICU_LIBRARIES}
 )
 
 WEBKIT_INCLUDE_CONFIG_FILES_IF_EXISTS()

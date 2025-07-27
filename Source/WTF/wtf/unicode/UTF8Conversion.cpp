@@ -30,6 +30,7 @@
 #include <wtf/ASCIICType.h>
 #include <wtf/text/StringHasher.h>
 #include <wtf/unicode/CharacterNames.h>
+#include "UnicodeMacros.h"
 
 namespace WTF {
 namespace Unicode {
