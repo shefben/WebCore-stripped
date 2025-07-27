@@ -869,12 +869,6 @@ dom/messageports/MessagePortChannelProviderImpl.cpp
 dom/messageports/MessagePortChannelRegistry.cpp
 dom/messageports/MessageWithMessagePorts.cpp
 
-domjit/DOMJITHelpers.cpp
-domjit/JSDocumentDOMJIT.cpp
-domjit/JSDocumentFragmentDOMJIT.cpp
-domjit/JSElementDOMJIT.cpp
-domjit/JSEventDOMJIT.cpp
-domjit/JSNodeDOMJIT.cpp
 
 editing/AlternativeTextController.cpp
 editing/AppendNodeCommand.cpp
