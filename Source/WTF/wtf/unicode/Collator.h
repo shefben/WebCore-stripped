@@ -28,48 +28,20 @@
 
 #pragma once
 
-#include <unicode/uconfig.h>
 #include <wtf/Noncopyable.h>
-
-struct UCharIterator;
-struct UCollator;
+#include <wtf/text/StringView.h>
+#include <wtf/text/WTFString.h>
 
 namespace WTF {
 
 class StringView;
 
-#if UCONFIG_NO_COLLATION
-
 class Collator {
 public:
     explicit Collator(const char* = nullptr, bool = false) { }
-
-    WTF_EXPORT_PRIVATE static int collate(StringView, StringView);
-    WTF_EXPORT_PRIVATE static int collateUTF8(const char*, const char*);
+    int collate(StringView, StringView) const;
+    int collateUTF8(const char*, const char*) const;
 };
-
-#else
-
-class Collator {
-    WTF_MAKE_NONCOPYABLE(Collator);
-public:
-    // The value nullptr is a special one meaning the system default locale.
-    // Locale name parsing is lenient; e.g. language identifiers (such as "en-US") are accepted, too.
-    WTF_EXPORT_PRIVATE explicit Collator(const char* locale = nullptr, bool shouldSortLowercaseFirst = false);
-    WTF_EXPORT_PRIVATE ~Collator();
-
-    WTF_EXPORT_PRIVATE int collate(StringView, StringView) const;
-    WTF_EXPORT_PRIVATE int collateUTF8(const char*, const char*) const;
-
-private:
-    char* m_locale;
-    bool m_shouldSortLowercaseFirst;
-    UCollator* m_collator;
-};
-
-WTF_EXPORT_PRIVATE UCharIterator createIterator(StringView);
-
-#endif
 
 }
 

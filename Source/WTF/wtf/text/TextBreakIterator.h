@@ -24,21 +24,11 @@
 #include <wtf/NeverDestroyed.h>
 #include <wtf/Variant.h>
 #include <wtf/text/StringView.h>
-#include <wtf/text/icu/TextBreakIteratorICU.h>
-
-#if PLATFORM(MAC) || PLATFORM(IOS_FAMILY)
-#include <wtf/text/cf/TextBreakIteratorCF.h>
-#else
 #include <wtf/text/NullTextBreakIterator.h>
-#endif
 
 namespace WTF {
 
-#if PLATFORM(MAC) || PLATFORM(IOS_FAMILY)
-typedef TextBreakIteratorCF TextBreakIteratorPlatform;
-#else
 typedef NullTextBreakIterator TextBreakIteratorPlatform;
-#endif
 
 class TextBreakIteratorCache;
 
@@ -324,15 +314,12 @@ private:
 class NonSharedCharacterBreakIterator {
     WTF_MAKE_NONCOPYABLE(NonSharedCharacterBreakIterator);
 public:
-    WTF_EXPORT_PRIVATE NonSharedCharacterBreakIterator(StringView);
-    WTF_EXPORT_PRIVATE ~NonSharedCharacterBreakIterator();
+    explicit NonSharedCharacterBreakIterator(StringView) { }
+    ~NonSharedCharacterBreakIterator() = default;
 
-    NonSharedCharacterBreakIterator(NonSharedCharacterBreakIterator&&);
+    NonSharedCharacterBreakIterator(NonSharedCharacterBreakIterator&&) = default;
 
-    operator UBreakIterator*() const { return m_iterator; }
-
-private:
-    UBreakIterator* m_iterator;
+    operator bool() const { return true; }
 };
 
 // Counts the number of grapheme clusters. A surrogate pair or a sequence

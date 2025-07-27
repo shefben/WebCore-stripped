@@ -29,8 +29,6 @@
 #include "config.h"
 #include <wtf/unicode/Collator.h>
 
-#if UCONFIG_NO_COLLATION
-
 namespace WTF {
 
 int Collator::collate(StringView a, StringView b) const
@@ -56,6 +54,5 @@ int Collator::collateUTF8(const char* a, const char* b) const
     return collate(String::fromUTF8(a), String::fromUTF8(b));
 }
 
-}
 
-#endif
+}
