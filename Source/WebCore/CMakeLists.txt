@@ -116,16 +116,10 @@ set(WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${WEBCORE_DIR}/rendering/mathml"
     "${WEBCORE_DIR}/rendering/shapes"
     "${WEBCORE_DIR}/rendering/style"
-    "${WEBCORE_DIR}/rendering/svg"
     "${WEBCORE_DIR}/rendering/updating"
     "${WEBCORE_DIR}/replay"
     "${WEBCORE_DIR}/storage"
     "${WEBCORE_DIR}/style"
-    "${WEBCORE_DIR}/svg"
-    "${WEBCORE_DIR}/svg/animation"
-    "${WEBCORE_DIR}/svg/graphics"
-    "${WEBCORE_DIR}/svg/graphics/filters"
-    "${WEBCORE_DIR}/svg/properties"
     "${WEBCORE_DIR}/websockets"
     "${WEBCORE_DIR}/workers"
     "${WEBCORE_DIR}/workers/service"
@@ -150,7 +144,6 @@ set(WebCore_IDL_INCLUDES
     page
     plugins
     storage
-    svg
     workers
 
     Modules/airplay
@@ -170,7 +163,6 @@ set(WebCore_IDL_INCLUDES
     Modules/webgpu
     Modules/websockets
     Modules/webvr
-
 
     css/typedom
 
@@ -246,12 +238,6 @@ set(WebCore_NON_SVG_IDL_FILES
     Modules/indexeddb/IDBTransactionMode.idl
     Modules/indexeddb/IDBVersionChangeEvent.idl
     Modules/indexeddb/WorkerGlobalScopeIndexedDatabase.idl
-
-
-
-
-
-
 
     Modules/notifications/Notification.idl
     Modules/notifications/NotificationPermission.idl
@@ -428,8 +414,6 @@ set(WebCore_NON_SVG_IDL_FILES
 
     accessibility/AccessibilityRole.idl
     accessibility/AriaAttributes.idl
-
-
 
     css/CSSFontFaceRule.idl
     css/CSSImportRule.idl
@@ -723,7 +707,6 @@ set(WebCore_NON_SVG_IDL_FILES
     html/canvas/PaintRenderingContext2D.idl
     html/canvas/Path2D.idl
 
-
     loader/appcache/DOMApplicationCache.idl
 
     page/BarProp.idl
@@ -806,155 +789,7 @@ set(WebCore_NON_SVG_IDL_FILES
     worklets/WorkletGlobalScope.idl
 )
 
-set(WebCore_SVG_IDL_FILES
-    svg/SVGAElement.idl
-    svg/SVGAltGlyphDefElement.idl
-    svg/SVGAltGlyphElement.idl
-    svg/SVGAltGlyphItemElement.idl
-    svg/SVGAngle.idl
-    svg/SVGAnimateColorElement.idl
-    svg/SVGAnimateElement.idl
-    svg/SVGAnimateMotionElement.idl
-    svg/SVGAnimateTransformElement.idl
-    svg/SVGAnimatedAngle.idl
-    svg/SVGAnimatedBoolean.idl
-    svg/SVGAnimatedEnumeration.idl
-    svg/SVGAnimatedInteger.idl
-    svg/SVGAnimatedLength.idl
-    svg/SVGAnimatedLengthList.idl
-    svg/SVGAnimatedNumber.idl
-    svg/SVGAnimatedNumberList.idl
-    svg/SVGAnimatedPreserveAspectRatio.idl
-    svg/SVGAnimatedRect.idl
-    svg/SVGAnimatedString.idl
-    svg/SVGAnimatedTransformList.idl
-    svg/SVGAnimationElement.idl
-    svg/SVGCircleElement.idl
-    svg/SVGClipPathElement.idl
-    svg/SVGComponentTransferFunctionElement.idl
-    svg/SVGCursorElement.idl
-    svg/SVGDefsElement.idl
-    svg/SVGDescElement.idl
-    svg/SVGDocument.idl
-    svg/SVGElement.idl
-    svg/SVGEllipseElement.idl
-    svg/SVGExternalResourcesRequired.idl
-    svg/SVGFEBlendElement.idl
-    svg/SVGFEColorMatrixElement.idl
-    svg/SVGFEComponentTransferElement.idl
-    svg/SVGFECompositeElement.idl
-    svg/SVGFEConvolveMatrixElement.idl
-    svg/SVGFEDiffuseLightingElement.idl
-    svg/SVGFEDisplacementMapElement.idl
-    svg/SVGFEDistantLightElement.idl
-    svg/SVGFEDropShadowElement.idl
-    svg/SVGFEFloodElement.idl
-    svg/SVGFEFuncAElement.idl
-    svg/SVGFEFuncBElement.idl
-    svg/SVGFEFuncGElement.idl
-    svg/SVGFEFuncRElement.idl
-    svg/SVGFEGaussianBlurElement.idl
-    svg/SVGFEImageElement.idl
-    svg/SVGFEMergeElement.idl
-    svg/SVGFEMergeNodeElement.idl
-    svg/SVGFEMorphologyElement.idl
-    svg/SVGFEOffsetElement.idl
-    svg/SVGFEPointLightElement.idl
-    svg/SVGFESpecularLightingElement.idl
-    svg/SVGFESpotLightElement.idl
-    svg/SVGFETileElement.idl
-    svg/SVGFETurbulenceElement.idl
-    svg/SVGFilterElement.idl
-    svg/SVGFilterPrimitiveStandardAttributes.idl
-    svg/SVGFitToViewBox.idl
-    svg/SVGFontElement.idl
-    svg/SVGFontFaceElement.idl
-    svg/SVGFontFaceFormatElement.idl
-    svg/SVGFontFaceNameElement.idl
-    svg/SVGFontFaceSrcElement.idl
-    svg/SVGFontFaceUriElement.idl
-    svg/SVGForeignObjectElement.idl
-    svg/SVGGElement.idl
-    svg/SVGGeometryElement.idl
-    svg/SVGGlyphElement.idl
-    svg/SVGGlyphRefElement.idl
-    svg/SVGGradientElement.idl
-    svg/SVGGraphicsElement.idl
-    svg/SVGHKernElement.idl
-    svg/SVGImageElement.idl
-    svg/SVGLength.idl
-    svg/SVGLengthList.idl
-    svg/SVGLineElement.idl
-    svg/SVGLinearGradientElement.idl
-    svg/SVGMPathElement.idl
-    svg/SVGMarkerElement.idl
-    svg/SVGMaskElement.idl
-    svg/SVGMatrix.idl
-    svg/SVGMetadataElement.idl
-    svg/SVGMissingGlyphElement.idl
-    svg/SVGNumber.idl
-    svg/SVGNumberList.idl
-    svg/SVGPathElement.idl
-    svg/SVGPathSeg.idl
-    svg/SVGPathSegArcAbs.idl
-    svg/SVGPathSegArcRel.idl
-    svg/SVGPathSegClosePath.idl
-    svg/SVGPathSegCurvetoCubicAbs.idl
-    svg/SVGPathSegCurvetoCubicRel.idl
-    svg/SVGPathSegCurvetoCubicSmoothAbs.idl
-    svg/SVGPathSegCurvetoCubicSmoothRel.idl
-    svg/SVGPathSegCurvetoQuadraticAbs.idl
-    svg/SVGPathSegCurvetoQuadraticRel.idl
-    svg/SVGPathSegCurvetoQuadraticSmoothAbs.idl
-    svg/SVGPathSegCurvetoQuadraticSmoothRel.idl
-    svg/SVGPathSegLinetoAbs.idl
-    svg/SVGPathSegLinetoHorizontalAbs.idl
-    svg/SVGPathSegLinetoHorizontalRel.idl
-    svg/SVGPathSegLinetoRel.idl
-    svg/SVGPathSegLinetoVerticalAbs.idl
-    svg/SVGPathSegLinetoVerticalRel.idl
-    svg/SVGPathSegList.idl
-    svg/SVGPathSegMovetoAbs.idl
-    svg/SVGPathSegMovetoRel.idl
-    svg/SVGPatternElement.idl
-    svg/SVGPoint.idl
-    svg/SVGPointList.idl
-    svg/SVGPolygonElement.idl
-    svg/SVGPolylineElement.idl
-    svg/SVGPreserveAspectRatio.idl
-    svg/SVGRadialGradientElement.idl
-    svg/SVGRect.idl
-    svg/SVGRectElement.idl
-    svg/SVGRenderingIntent.idl
-    svg/SVGSVGElement.idl
-    svg/SVGScriptElement.idl
-    svg/SVGSetElement.idl
-    svg/SVGStopElement.idl
-    svg/SVGStringList.idl
-    svg/SVGStyleElement.idl
-    svg/SVGSwitchElement.idl
-    svg/SVGSymbolElement.idl
-    svg/SVGTRefElement.idl
-    svg/SVGTSpanElement.idl
-    svg/SVGTests.idl
-    svg/SVGTextContentElement.idl
-    svg/SVGTextElement.idl
-    svg/SVGTextPathElement.idl
-    svg/SVGTextPositioningElement.idl
-    svg/SVGTitleElement.idl
-    svg/SVGTransform.idl
-    svg/SVGTransformList.idl
-    svg/SVGURIReference.idl
-    svg/SVGUnitTypes.idl
-    svg/SVGUseElement.idl
-    svg/SVGVKernElement.idl
-    svg/SVGViewElement.idl
-    svg/SVGViewSpec.idl
-    svg/SVGZoomAndPan.idl
-    svg/SVGZoomEvent.idl
-)
-
-if (ENABLE_GAMEPAD)
+if (ENABLE_GAMEPAD
     list(APPEND WebCore_PRIVATE_INCLUDE_DIRECTORIES
         "${WEBCORE_DIR}/Modules/gamepad"
     )
@@ -986,7 +821,6 @@ endif ()
 
 set(WebCore_IDL_FILES
     ${WebCore_NON_SVG_IDL_FILES}
-    ${WebCore_SVG_IDL_FILES}
 )
 
 set(WebCore_CSS_PROPERTY_NAMES
@@ -1008,7 +842,6 @@ set(WebCore_USER_AGENT_STYLE_SHEETS
     ${WEBCORE_DIR}/html/shadow/meterElementShadow.css
 )
 
-
 set(WebCore_LIBRARIES
     ${ICU_LIBRARIES}
     ${LIBXML2_LIBRARIES}
@@ -1017,8 +850,6 @@ set(WebCore_LIBRARIES
     ${ZLIB_LIBRARIES}
     PAL${DEBUG_SUFFIX}
 )
-
-
 
 list(APPEND WebCore_CSS_VALUE_KEYWORDS
     ${WEBCORE_DIR}/css/SVGCSSValueKeywords.in
@@ -1324,7 +1155,6 @@ set(WebCoreTestSupport_IDL_FILES
 list(APPEND WebCoreTestSupport_SOURCES
     platform/mock/PlatformSpeechSynthesizerMock.cpp
 
-
     testing/GCObservation.cpp
     testing/InternalSettings.cpp
     testing/Internals.cpp
@@ -1371,11 +1201,8 @@ WEBKIT_MAKE_FORWARDING_HEADERS(WebCore
     FLATTENED
 )
 
-
-
 MAKE_HASH_TOOLS(${WEBCORE_DIR}/platform/ColorData)
 list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/ColorData.cpp)
-
 
 # Generate DOMJITAbstractHeapRepository.h
 add_custom_command(
@@ -1385,7 +1212,6 @@ add_custom_command(
     COMMAND ${RUBY_EXECUTABLE} ${WEBCORE_DIR}/domjit/generate-abstract-heap.rb ${WEBCORE_DIR}/domjit/DOMJITAbstractHeapRepository.yaml ${WebCore_DERIVED_SOURCES_DIR}/DOMJITAbstractHeapRepository.h
     VERBATIM)
 list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/DOMJITAbstractHeapRepository.h)
-
 
 # Generate HTML entity table
 add_custom_command(
@@ -1477,7 +1303,6 @@ if (WebCore_USER_AGENT_SCRIPTS)
     list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/UserAgentScriptsData.cpp)
 endif ()
 
-
 set(FEATURE_DEFINES_JAVASCRIPT "LANGUAGE_JAVASCRIPT ${FEATURE_DEFINES_WITH_SPACE_SEPARATOR}")
 list(APPEND WebCoreTestSupport_IDL_FILES ${WebCore_DERIVED_SOURCES_DIR}/InternalSettingsGenerated.idl)
 
@@ -1514,20 +1339,16 @@ add_dependencies(WebCoreTestSupportBindings WebCore)
 
 ADD_SOURCE_WEBCORE_DERIVED_DEPENDENCIES(${WEBCORE_DIR}/html/HTMLTreeBuilder.cpp MathMLNames.cpp)
 
-
 GENERATE_DOM_NAMES(HTML ${WEBCORE_DIR}/html/HTMLAttributeNames.in ${WEBCORE_DIR}/html/HTMLTagNames.in "")
 list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/HTMLNames.cpp ${WebCore_DERIVED_SOURCES_DIR}/HTMLElementFactory.cpp ${WebCore_DERIVED_SOURCES_DIR}/JSHTMLElementWrapperFactory.cpp)
-
 
 GENERATE_EVENT_FACTORY(${WEBCORE_DIR}/dom/EventNames.in Event)
 list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/EventInterfaces.h)
 list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/EventFactory.cpp)
 
-
 GENERATE_EVENT_FACTORY(${WEBCORE_DIR}/dom/EventTargetFactory.in EventTarget)
 list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/EventTargetInterfaces.h)
 list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/EventTargetFactory.cpp)
-
 
 GENERATE_SETTINGS_MACROS(${WEBCORE_DIR}/page/Settings.yaml Settings.h)
 list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/Settings.h)
@@ -1537,28 +1358,11 @@ list(APPEND WebCoreTestSupport_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/InternalSe
 GENERATE_FONT_NAMES(${WEBCORE_DIR}/css/WebKitFontFamilyNames.in)
 list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/WebKitFontFamilyNames.cpp)
 
-
 GENERATE_DOM_NAMES(MathML ${WEBCORE_DIR}/mathml/mathattrs.in ${WEBCORE_DIR}/mathml/mathtags.in "")
 list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/MathMLNames.cpp)
 if (ENABLE_MATHML)
     list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/MathMLElementFactory.cpp)
 endif ()
-
-# SVG extra defines need to map to a numerical value for correct preprocessing of svgtags.in.
-set(SVG_EXTRA_DEFINES "")
-if (ENABLE_SVG_FONTS)
-    list(APPEND SVG_EXTRA_DEFINES "ENABLE_SVG_FONTS=1")
-endif ()
-
-GENERATE_DOM_NAMES(SVG ${WEBCORE_DIR}/svg/svgattrs.in ${WEBCORE_DIR}/svg/svgtags.in "${SVG_EXTRA_DEFINES}")
-list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/SVGNames.cpp)
-
-list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/SVGElementFactory.cpp ${WebCore_DERIVED_SOURCES_DIR}/JSSVGElementWrapperFactory.cpp)
-
-GENERATE_DOM_NAMES(XLink ${WEBCORE_DIR}/svg/xlinkattrs.in)
-list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/XLinkNames.cpp)
-
-
 
 WEBKIT_WRAP_SOURCELIST(${WebCore_IDL_FILES})
 WEBKIT_COMPUTE_SOURCES(WebCore)
@@ -1575,7 +1379,6 @@ add_dependencies(WebCore WebCoreBindings)
 add_dependencies(WebCorePrivateFrameworkHeaders WebCoreBindings)
 
 add_dependencies(WebCore UltralightCoreBin)
-
 
 if (APPLE AND NOT PORT MATCHES "UltralightMac")
     set_target_properties(WebCore PROPERTIES LINK_FLAGS "-sub_library libobjc -umbrella WebKit -allowable_client WebCoreTestSupport -allowable_client WebKit2 -allowable_client WebKitLegacy")
@@ -1597,7 +1400,6 @@ add_library(WebCoreHeaderInterface INTERFACE)
 target_include_directories(WebCoreHeaderInterface INTERFACE ${WebCore_INCLUDE_DIRECTORIES})
 target_include_directories(WebCoreHeaderInterface SYSTEM INTERFACE ${WebCore_SYSTEM_INCLUDE_DIRECTORIES})
 target_link_libraries(WebCoreHeaderInterface INTERFACE ${WebCore_LIBRARIES})
-
 
 #add_library(WebCoreTestSupport ${WebCoreTestSupport_LIBRARY_TYPE} ${WebCoreTestSupport_SOURCES})
 #add_dependencies(WebCoreTestSupport WebCore WebCoreTestSupportBindings)
