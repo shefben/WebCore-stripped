@@ -184,7 +184,6 @@ set(WebCore_FORWARDING_HEADERS_DIRECTORIES
     platform/mock
     platform/network
     platform/network/curl
-    platform/sql
     platform/text
     platform/ultralight
     platform/graphics/filters

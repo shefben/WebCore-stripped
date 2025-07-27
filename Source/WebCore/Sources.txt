@@ -1728,12 +1728,6 @@ platform/network/SocketStreamHandle.cpp
 platform/network/SocketStreamHandleImpl.cpp
 platform/network/SynchronousLoaderClient.cpp
 
-platform/sql/SQLiteAuthorizer.cpp
-platform/sql/SQLiteDatabase.cpp
-platform/sql/SQLiteDatabaseTracker.cpp
-platform/sql/SQLiteFileSystem.cpp
-platform/sql/SQLiteStatement.cpp
-platform/sql/SQLiteTransaction.cpp
 
 platform/text/BidiContext.cpp
 platform/text/DateTimeFormat.cpp

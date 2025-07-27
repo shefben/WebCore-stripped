@@ -1161,13 +1161,6 @@ set(WebCore_PRIVATE_FRAMEWORK_HEADERS
     platform/network/StorageSessionProvider.h
     platform/network/StoredCredentialsPolicy.h
 
-    platform/sql/SQLValue.h
-    platform/sql/SQLiteDatabase.h
-    platform/sql/SQLiteDatabaseTracker.h
-    platform/sql/SQLiteDatabaseTrackerClient.h
-    platform/sql/SQLiteFileSystem.h
-    platform/sql/SQLiteStatement.h
-    platform/sql/SQLiteTransaction.h
 
     platform/text/BidiContext.h
     platform/text/StringWithDirection.h
