@@ -954,13 +954,6 @@ fileapi/FileReader.cpp
 fileapi/FileReaderLoader.cpp
 fileapi/FileReaderSync.cpp
 fileapi/ThreadableBlobRegistry.cpp
-
-history/BackForwardController.cpp
-history/CachedFrame.cpp
-history/CachedPage.cpp
-history/HistoryItem.cpp
-history/PageCache.cpp
-
 html/Autofill.cpp
 html/BaseButtonInputType.cpp
 html/BaseCheckableInputType.cpp
