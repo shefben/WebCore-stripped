@@ -39,13 +39,6 @@ set(WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${WEBCORE_DIR}/Modules/indexeddb/client"
     "${WEBCORE_DIR}/Modules/indexeddb/server"
     "${WEBCORE_DIR}/Modules/indexeddb/shared"
-    "${WEBCORE_DIR}/Modules/mediacapabilities"
-    "${WEBCORE_DIR}/Modules/mediacontrols"
-    "${WEBCORE_DIR}/Modules/mediarecorder"
-    "${WEBCORE_DIR}/Modules/mediasession"
-    "${WEBCORE_DIR}/Modules/mediasource"
-    "${WEBCORE_DIR}/Modules/mediastream"
-    "${WEBCORE_DIR}/Modules/mediastream/libwebrtc"
     "${WEBCORE_DIR}/Modules/navigatorcontentutils"
     "${WEBCORE_DIR}/Modules/notifications"
     "${WEBCORE_DIR}/Modules/paymentrequest"
@@ -118,13 +111,7 @@ set(WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${WEBCORE_DIR}/platform/graphics/iso"
     "${WEBCORE_DIR}/platform/graphics/opentype"
     "${WEBCORE_DIR}/platform/graphics/transforms"
-    "${WEBCORE_DIR}/platform/mediacapabilities"
-    "${WEBCORE_DIR}/platform/mediarecorder"
-    "${WEBCORE_DIR}/platform/mediasession"
-    "${WEBCORE_DIR}/platform/mediastream"
-    "${WEBCORE_DIR}/platform/mediastream/libwebrtc"
     "${WEBCORE_DIR}/platform/mock"
-    "${WEBCORE_DIR}/platform/mock/mediasource"
     "${WEBCORE_DIR}/platform/network"
     "${WEBCORE_DIR}/platform/sql"
     "${WEBCORE_DIR}/platform/text"
@@ -180,10 +167,6 @@ set(WebCore_IDL_INCLUDES
     Modules/fetch
     Modules/geolocation
     Modules/indexeddb
-    Modules/mediacapabilities
-    Modules/mediarecorder
-    Modules/mediasession
-    Modules/mediastream
     Modules/notifications
     Modules/paymentrequest
     Modules/quota
@@ -272,89 +255,11 @@ set(WebCore_NON_SVG_IDL_FILES
     Modules/indexeddb/IDBVersionChangeEvent.idl
     Modules/indexeddb/WorkerGlobalScopeIndexedDatabase.idl
 
-    Modules/mediacapabilities/AudioConfiguration.idl
-    Modules/mediacapabilities/MediaCapabilities.idl
-    Modules/mediacapabilities/MediaCapabilitiesDecodingInfo.idl
-    Modules/mediacapabilities/MediaCapabilitiesEncodingInfo.idl
-    Modules/mediacapabilities/MediaCapabilitiesInfo.idl
-    Modules/mediacapabilities/MediaConfiguration.idl
-    Modules/mediacapabilities/MediaDecodingConfiguration.idl
-    Modules/mediacapabilities/MediaDecodingType.idl
-    Modules/mediacapabilities/MediaEncodingConfiguration.idl
-    Modules/mediacapabilities/MediaEncodingType.idl
-    Modules/mediacapabilities/NavigatorMediaCapabilities.idl
-    Modules/mediacapabilities/ScreenColorGamut.idl
-    Modules/mediacapabilities/ScreenLuminance.idl
-    Modules/mediacapabilities/VideoConfiguration.idl
 
-    Modules/mediacontrols/MediaControlsHost.idl
 
-    Modules/mediarecorder/BlobEvent.idl
-    Modules/mediarecorder/MediaRecorder.idl
-    Modules/mediarecorder/MediaRecorderErrorEvent.idl
 
-    Modules/mediasession/HTMLMediaElementMediaSession.idl
-    Modules/mediasession/MediaRemoteControls.idl
-    Modules/mediasession/MediaSession.idl
 
-    Modules/mediasource/DOMURLMediaSource.idl
-    Modules/mediasource/MediaSource.idl
-    Modules/mediasource/SourceBuffer.idl
-    Modules/mediasource/SourceBufferList.idl
-    Modules/mediasource/VideoPlaybackQuality.idl
 
-    Modules/mediastream/CanvasCaptureMediaStreamTrack.idl
-    Modules/mediastream/DoubleRange.idl
-    Modules/mediastream/LongRange.idl
-    Modules/mediastream/MediaDeviceInfo.idl
-    Modules/mediastream/MediaDevices.idl
-    Modules/mediastream/MediaStream.idl
-    Modules/mediastream/MediaStreamTrack.idl
-    Modules/mediastream/MediaStreamTrackEvent.idl
-    Modules/mediastream/MediaTrackConstraints.idl
-    Modules/mediastream/MediaTrackSupportedConstraints.idl
-    Modules/mediastream/NavigatorMediaDevices.idl
-    Modules/mediastream/OverconstrainedError.idl
-    Modules/mediastream/OverconstrainedErrorEvent.idl
-    Modules/mediastream/RTCAnswerOptions.idl
-    Modules/mediastream/RTCCertificate.idl
-    Modules/mediastream/RTCConfiguration.idl
-    Modules/mediastream/RTCDTMFSender.idl
-    Modules/mediastream/RTCDTMFToneChangeEvent.idl
-    Modules/mediastream/RTCDataChannel.idl
-    Modules/mediastream/RTCDataChannelEvent.idl
-    Modules/mediastream/RTCDegradationPreference.idl
-    Modules/mediastream/RTCDtxStatus.idl
-    Modules/mediastream/RTCIceCandidate.idl
-    Modules/mediastream/RTCIceConnectionState.idl
-    Modules/mediastream/RTCIceGatheringState.idl
-    Modules/mediastream/RTCIceServer.idl
-    Modules/mediastream/RTCIceTransport.idl
-    Modules/mediastream/RTCIceTransportState.idl
-    Modules/mediastream/RTCOfferAnswerOptions.idl
-    Modules/mediastream/RTCOfferOptions.idl
-    Modules/mediastream/RTCPeerConnection.idl
-    Modules/mediastream/RTCPeerConnectionIceEvent.idl
-    Modules/mediastream/RTCPeerConnectionState.idl
-    Modules/mediastream/RTCPriorityType.idl
-    Modules/mediastream/RTCRtpCapabilities.idl
-    Modules/mediastream/RTCRtpCodecParameters.idl
-    Modules/mediastream/RTCRtpContributingSource.idl
-    Modules/mediastream/RTCRtpEncodingParameters.idl
-    Modules/mediastream/RTCRtpFecParameters.idl
-    Modules/mediastream/RTCRtpHeaderExtensionParameters.idl
-    Modules/mediastream/RTCRtpParameters.idl
-    Modules/mediastream/RTCRtpReceiver.idl
-    Modules/mediastream/RTCRtpRtxParameters.idl
-    Modules/mediastream/RTCRtpSendParameters.idl
-    Modules/mediastream/RTCRtpSender.idl
-    Modules/mediastream/RTCRtpSynchronizationSource.idl
-    Modules/mediastream/RTCRtpTransceiver.idl
-    Modules/mediastream/RTCRtpTransceiverDirection.idl
-    Modules/mediastream/RTCSessionDescription.idl
-    Modules/mediastream/RTCSignalingState.idl
-    Modules/mediastream/RTCStatsReport.idl
-    Modules/mediastream/RTCTrackEvent.idl
 
     Modules/notifications/Notification.idl
     Modules/notifications/NotificationPermission.idl
@@ -1253,9 +1158,6 @@ if (ENABLE_VIDEO_TRACK)
 
     if (ENABLE_MEDIA_SOURCE)
         list(APPEND WebCore_IDL_FILES
-            Modules/mediasource/AudioTrackMediaSource.idl
-            Modules/mediasource/TextTrackMediaSource.idl
-            Modules/mediasource/VideoTrackMediaSource.idl
         )
     endif ()
 
@@ -1408,14 +1310,6 @@ if (USE_LIBWEBRTC)
         "${THIRDPARTY_DIR}/libwebrtc/Source/third_party/abseil-cpp")
     list(APPEND WebCore_LIBRARIES webrtc)
     list(APPEND WebCore_SOURCES
-        Modules/mediastream/libwebrtc/LibWebRTCDataChannelHandler.cpp
-        Modules/mediastream/libwebrtc/LibWebRTCMediaEndpoint.cpp
-        Modules/mediastream/libwebrtc/LibWebRTCPeerConnectionBackend.cpp
-        Modules/mediastream/libwebrtc/LibWebRTCRtpReceiverBackend.cpp
-        Modules/mediastream/libwebrtc/LibWebRTCRtpSenderBackend.cpp
-        Modules/mediastream/libwebrtc/LibWebRTCRtpTransceiverBackend.cpp
-        Modules/mediastream/libwebrtc/LibWebRTCStatsCollector.cpp
-        Modules/mediastream/libwebrtc/LibWebRTCUtils.cpp
     )
 endif ()
 
@@ -1450,10 +1344,6 @@ set(WebCoreTestSupport_IDL_FILES
 list(APPEND WebCoreTestSupport_SOURCES
     platform/mock/PlatformSpeechSynthesizerMock.cpp
 
-    platform/mock/mediasource/MockBox.cpp
-    platform/mock/mediasource/MockMediaPlayerMediaSource.cpp
-    platform/mock/mediasource/MockMediaSourcePrivate.cpp
-    platform/mock/mediasource/MockSourceBufferPrivate.cpp
 
     testing/GCObservation.cpp
     testing/InternalSettings.cpp
@@ -1665,8 +1555,6 @@ add_dependencies(WebCoreTestSupportBindings WebCore)
 # WebCore JS Builtins
 
 set(WebCore_BUILTINS_SOURCES
-    ${WEBCORE_DIR}/Modules/mediastream/RTCPeerConnection.js
-    ${WEBCORE_DIR}/Modules/mediastream/RTCPeerConnectionInternals.js
     ${WEBCORE_DIR}/Modules/streams/ByteLengthQueuingStrategy.js
     ${WEBCORE_DIR}/Modules/streams/CountQueuingStrategy.js
     ${WEBCORE_DIR}/Modules/streams/ReadableByteStreamController.js
@@ -1791,9 +1679,6 @@ add_dependencies(WebCorePrivateFrameworkHeaders WebCoreBindings)
 
 add_dependencies(WebCore UltralightCoreBin)
 
-if (USE_GSTREAMER)
-    add_dependencies(WebCore GStreamerBin)
-endif ()
 
 if (APPLE AND NOT PORT MATCHES "UltralightMac")
     set_target_properties(WebCore PROPERTIES LINK_FLAGS "-sub_library libobjc -umbrella WebKit -allowable_client WebCoreTestSupport -allowable_client WebKit2 -allowable_client WebKitLegacy")

@@ -6,9 +6,6 @@ include(platform/ImageDecoders.cmake)
 include(platform/TextureMapper.cmake)
 include(platform/Curl.cmake)
 
-if (USE_GSTREAMER)
-    include(platform/GStreamer.cmake)
-endif ()
 
 list(APPEND WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${CMAKE_BINARY_DIR}/../include/private"
@@ -135,12 +132,6 @@ list(APPEND WebCore_SOURCES
     platform/ultralight/WidgetUltralight.cpp
 )
 
-if (USE_GSTREAMER)
-    list(APPEND WebCore_SOURCES
-        platform/graphics/gstreamer/ImageGStreamerUltralight.cpp
-        platform/audio/ultralight/AudioBusUltralight.cpp
-    )
-endif ()
 
 list(APPEND WebCore_USER_AGENT_STYLE_SHEETS
 )
@@ -251,11 +242,6 @@ list(APPEND WebCore_LIBRARIES
     ${SECURITY_LIBRARY}
 )
 
-if (USE_GSTREAMER)
-    list(APPEND WebCore_LIBRARIES
-        gstreamer-full-1.0
-    )
-endif ()
 
 file(MAKE_DIRECTORY ${DERIVED_SOURCES_DIR}/ForwardingHeaders/WebCore)
 
