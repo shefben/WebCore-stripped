@@ -496,15 +496,6 @@ set(WebCore_PRIVATE_FRAMEWORK_HEADERS
     fileapi/FileList.h
     fileapi/FileReaderLoader.h
     fileapi/FileReaderLoaderClient.h
-
-    history/BackForwardClient.h
-    history/BackForwardController.h
-    history/BackForwardItemIdentifier.h
-    history/CachedFrame.h
-    history/CachedFramePlatformData.h
-    history/HistoryItem.h
-    history/PageCache.h
-
     html/Autocapitalize.h
     html/AutocapitalizeTypes.h
     html/Autofill.h
