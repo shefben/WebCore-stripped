@@ -52,8 +52,6 @@ list(APPEND PAL_PUBLIC_HEADERS
     spi/cocoa/WebFilterEvaluatorSPI.h
     spi/cocoa/pthreadSPI.h
 
-    spi/ios/DataDetectorsUISPI.h
-    spi/ios/GraphicsServicesSPI.h
 
     spi/mac/AVFoundationSPI.h
     spi/mac/CoreUISPI.h
