@@ -1329,21 +1329,8 @@ set(WebCore_PRIVATE_FRAMEWORK_HEADERS
     style/StyleScope.h
     style/StyleValidity.h
 
-    svg/SVGLengthContext.h
-    svg/SVGLengthValue.h
-    svg/SVGParserUtilities.h
-    svg/SVGParsingError.h
-    svg/SVGStringList.h
-    svg/SVGTests.h
-    svg/SVGUnitTypes.h
 
-    svg/graphics/SVGImageCache.h
 
-    svg/properties/SVGList.h
-    svg/properties/SVGPrimitiveList.h
-    svg/properties/SVGProperty.h
-    svg/properties/SVGPropertyOwner.h
-    svg/properties/SVGPropertyTraits.h
 
     testing/MockGamepad.h
     testing/MockGamepadProvider.h
