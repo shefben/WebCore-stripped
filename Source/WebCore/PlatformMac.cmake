@@ -73,7 +73,6 @@ endif ()
 list(APPEND WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${WEBCORE_DIR}/Modules/webgpu/WHLSL/Metal"
     "${WEBCORE_DIR}/accessibility/mac"
-    "${WEBCORE_DIR}/bridge/objc"
     "${WEBCORE_DIR}/editing/cocoa"
     "${WEBCORE_DIR}/editing/ios"
     "${WEBCORE_DIR}/editing/mac"
@@ -430,8 +429,6 @@ list(APPEND WebCore_PRIVATE_FRAMEWORK_HEADERS
     accessibility/mac/WebAccessibilityObjectWrapperBase.h
     accessibility/mac/WebAccessibilityObjectWrapperMac.h
 
-    bridge/objc/WebScriptObject.h
-    bridge/objc/WebScriptObjectPrivate.h
 
     editing/cocoa/AutofillElements.h
     editing/cocoa/DataDetection.h
