@@ -697,8 +697,6 @@ css/typedom/TypedOMCSSStyleValue.cpp
 css/typedom/TypedOMCSSUnitValue.cpp
 css/typedom/TypedOMCSSUnparsedValue.cpp
 
-cssjit/SelectorCompiler.cpp
-
 dom/AbortController.cpp
 dom/AbortSignal.cpp
 dom/ActiveDOMCallback.cpp
