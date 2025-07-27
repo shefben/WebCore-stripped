@@ -8,7 +8,6 @@ endif ()
 
 add_subdirectory(mimalloc)
 add_subdirectory(WTF)
-add_subdirectory(JavaScriptCore)
 add_subdirectory(SQLite)
 add_subdirectory(WebCore)
 

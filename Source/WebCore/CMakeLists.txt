@@ -17,7 +17,6 @@ list(APPEND WebCore_UNIFIED_SOURCE_LIST_FILES
 )
 
 set(WebCore_INCLUDE_DIRECTORIES
-    "${JavaScriptCore_PRIVATE_FRAMEWORK_HEADERS_DIR}"
     "${PAL_FRAMEWORK_HEADERS_DIR}"
 )
 
@@ -60,7 +59,6 @@ set(WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${WEBCORE_DIR}/accessibility"
     "${WEBCORE_DIR}/accessibility/isolatedtree"
     "${WEBCORE_DIR}/bindings"
-    "${WEBCORE_DIR}/bindings/js"
     "${WEBCORE_DIR}/contentextensions"
     "${WEBCORE_DIR}/css"
     "${WEBCORE_DIR}/css/parser"
@@ -173,7 +171,6 @@ set(WebCore_IDL_INCLUDES
     Modules/websockets
     Modules/webvr
 
-    bindings/js
 
     css/typedom
 
@@ -1011,9 +1008,6 @@ set(WebCore_USER_AGENT_STYLE_SHEETS
     ${WEBCORE_DIR}/html/shadow/meterElementShadow.css
 )
 
-set(WebCore_PLUG_INS_RESOURCES
-    ${WEBCORE_DIR}/Resources/plugIns.js
-)
 
 set(WebCore_LIBRARIES
     ${ICU_LIBRARIES}
@@ -1024,9 +1018,6 @@ set(WebCore_LIBRARIES
     PAL${DEBUG_SUFFIX}
 )
 
-set(WebCoreTestSupport_LIBRARIES
-    JavaScriptCore${DEBUG_SUFFIX}
-)
 
 
 list(APPEND WebCore_CSS_VALUE_KEYWORDS
@@ -1310,7 +1301,6 @@ endif ()
 set(WebCoreTestSupport_PRIVATE_INCLUDE_DIRECTORIES
     "${WEBCORE_DIR}/platform/mock"
     "${WEBCORE_DIR}/testing"
-    "${WEBCORE_DIR}/testing/js"
     "${WebCore_DERIVED_SOURCES_DIR}"
 )
 
@@ -1345,7 +1335,6 @@ list(APPEND WebCoreTestSupport_SOURCES
     testing/MockPageOverlay.cpp
     testing/MockPageOverlayClient.cpp
     testing/ServiceWorkerInternals.cpp
-    testing/js/WebCoreTestSupport.cpp
 )
 
 # Modules that the bindings generator scripts may use
@@ -1488,15 +1477,6 @@ if (WebCore_USER_AGENT_SCRIPTS)
     list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/UserAgentScriptsData.cpp)
 endif ()
 
-# Generate plug-in resources
-add_custom_command(
-    OUTPUT ${WebCore_DERIVED_SOURCES_DIR}/PlugInsResourcesData.cpp ${WebCore_DERIVED_SOURCES_DIR}/PlugInsResources.h
-    MAIN_DEPENDENCY ${WEBCORE_DIR}/css/make-css-file-arrays.pl
-    DEPENDS ${WebCore_PLUG_INS_RESOURCES} ${WEBCORE_DIR}/bindings/scripts/preprocessor.pm
-    COMMAND ${PERL_EXECUTABLE} ${WEBCORE_DIR}/css/make-css-file-arrays.pl --defines "${FEATURE_DEFINES_WITH_SPACE_SEPARATOR}" --preprocessor "${CODE_GENERATOR_PREPROCESSOR}" ${WebCore_DERIVED_SOURCES_DIR}/PlugInsResources.h ${WebCore_DERIVED_SOURCES_DIR}/PlugInsResourcesData.cpp ${WebCore_PLUG_INS_RESOURCES}
-    VERBATIM)
-list(APPEND WebCore_SOURCES ${WebCore_DERIVED_SOURCES_DIR}/PlugInsResourcesData.cpp)
-ADD_SOURCE_WEBCORE_DERIVED_DEPENDENCIES(${WEBCORE_DIR}/css/StyleResolver.cpp PlugInsResourcesData.cpp PlugInsResources.h)
 
 set(FEATURE_DEFINES_JAVASCRIPT "LANGUAGE_JAVASCRIPT ${FEATURE_DEFINES_WITH_SPACE_SEPARATOR}")
 list(APPEND WebCoreTestSupport_IDL_FILES ${WebCore_DERIVED_SOURCES_DIR}/InternalSettingsGenerated.idl)
@@ -1531,69 +1511,6 @@ GENERATE_BINDINGS(WebCoreTestSupportBindings
 
 # WebCoreTestSupportBindings needs InternalSettingsGenerated.idl
 add_dependencies(WebCoreTestSupportBindings WebCore)
-
-# WebCore JS Builtins
-
-set(WebCore_BUILTINS_SOURCES
-    ${WEBCORE_DIR}/Modules/streams/ByteLengthQueuingStrategy.js
-    ${WEBCORE_DIR}/Modules/streams/CountQueuingStrategy.js
-    ${WEBCORE_DIR}/Modules/streams/ReadableByteStreamController.js
-    ${WEBCORE_DIR}/Modules/streams/ReadableByteStreamInternals.js
-    ${WEBCORE_DIR}/Modules/streams/ReadableStream.js
-    ${WEBCORE_DIR}/Modules/streams/ReadableStreamBYOBReader.js
-    ${WEBCORE_DIR}/Modules/streams/ReadableStreamBYOBRequest.js
-    ${WEBCORE_DIR}/Modules/streams/ReadableStreamDefaultController.js
-    ${WEBCORE_DIR}/Modules/streams/ReadableStreamInternals.js
-    ${WEBCORE_DIR}/Modules/streams/ReadableStreamDefaultReader.js
-    ${WEBCORE_DIR}/Modules/streams/StreamInternals.js
-    ${WEBCORE_DIR}/Modules/streams/WritableStream.js
-    ${WEBCORE_DIR}/Modules/streams/WritableStreamInternals.js
-    ${WEBCORE_DIR}/bindings/js/JSDOMBindingInternals.js
-)
-
-set(BUILTINS_GENERATOR_SCRIPTS
-    ${JavaScriptCore_SCRIPTS_DIR}/wkbuiltins.py
-    ${JavaScriptCore_SCRIPTS_DIR}/builtins_generator.py
-    ${JavaScriptCore_SCRIPTS_DIR}/builtins_model.py
-    ${JavaScriptCore_SCRIPTS_DIR}/builtins_templates.py
-    ${JavaScriptCore_SCRIPTS_DIR}/builtins_generate_combined_header.py
-    ${JavaScriptCore_SCRIPTS_DIR}/builtins_generate_combined_implementation.py
-    ${JavaScriptCore_SCRIPTS_DIR}/builtins_generate_separate_header.py
-    ${JavaScriptCore_SCRIPTS_DIR}/builtins_generate_separate_implementation.py
-    ${JavaScriptCore_SCRIPTS_DIR}/builtins_generate_wrapper_header.py
-    ${JavaScriptCore_SCRIPTS_DIR}/builtins_generate_wrapper_implementation.py
-    ${JavaScriptCore_SCRIPTS_DIR}/builtins_generate_internals_wrapper_header.py
-    ${JavaScriptCore_SCRIPTS_DIR}/builtins_generate_internals_wrapper_implementation.py
-    ${JavaScriptCore_SCRIPTS_DIR}/generate-js-builtins.py
-    ${JavaScriptCore_SCRIPTS_DIR}/lazywriter.py
-)
-
-foreach (_builtinSource ${WebCore_BUILTINS_SOURCES})
-    get_filename_component(_objectName ${_builtinSource} NAME_WE)
-    add_custom_command(
-        OUTPUT ${WebCore_DERIVED_SOURCES_DIR}/${_objectName}Builtins.cpp
-               ${WebCore_DERIVED_SOURCES_DIR}/${_objectName}Builtins.h
-        MAIN_DEPENDENCY ${_builtinSource}
-        DEPENDS ${BUILTINS_GENERATOR_SCRIPTS}
-        COMMAND ${PYTHON_EXECUTABLE} ${JavaScriptCore_SCRIPTS_DIR}/generate-js-builtins.py --framework WebCore --output-directory ${WebCore_DERIVED_SOURCES_DIR} ${_builtinSource}
-        VERBATIM)
-    list(APPEND WebCore_DERIVED_BUILTIN_HEADERS ${WebCore_DERIVED_SOURCES_DIR}/${_objectName}Builtins.h)
-endforeach ()
-
-add_custom_command(
-    OUTPUT ${WebCore_DERIVED_SOURCES_DIR}/WebCoreJSBuiltins.cpp
-           ${WebCore_DERIVED_SOURCES_DIR}/WebCoreJSBuiltinInternals.cpp
-           ${WebCore_DERIVED_SOURCES_DIR}/WebCoreJSBuiltins.h
-           ${WebCore_DERIVED_SOURCES_DIR}/WebCoreJSBuiltinInternals.h
-    MAIN_DEPENDENCY ${WebCore_BUILTINS_SOURCES}
-    DEPENDS ${BUILTINS_GENERATOR_SCRIPTS} ${WebCore_DERIVED_BUILTIN_HEADERS}
-    COMMAND ${PYTHON_EXECUTABLE} ${JavaScriptCore_SCRIPTS_DIR}/generate-js-builtins.py --wrappers-only --framework WebCore --output-directory ${WebCore_DERIVED_SOURCES_DIR} ${WebCore_BUILTINS_SOURCES}
-    VERBATIM)
-list(APPEND WebCore_SOURCES
-    ${WebCore_DERIVED_SOURCES_DIR}/WebCoreJSBuiltins.cpp
-    ${WebCore_DERIVED_SOURCES_DIR}/WebCoreJSBuiltinInternals.cpp
-    ${WebCore_DERIVED_SOURCES_DIR}/WebCoreJSBuiltins.h
-    ${WebCore_DERIVED_SOURCES_DIR}/WebCoreJSBuiltinInternals.h)
 
 ADD_SOURCE_WEBCORE_DERIVED_DEPENDENCIES(${WEBCORE_DIR}/html/HTMLTreeBuilder.cpp MathMLNames.cpp)
 
@@ -1681,9 +1598,6 @@ target_include_directories(WebCoreHeaderInterface INTERFACE ${WebCore_INCLUDE_DI
 target_include_directories(WebCoreHeaderInterface SYSTEM INTERFACE ${WebCore_SYSTEM_INCLUDE_DIRECTORIES})
 target_link_libraries(WebCoreHeaderInterface INTERFACE ${WebCore_LIBRARIES})
 
-if (MSVC)
-    WEBKIT_ADD_PRECOMPILED_HEADER("WebCoreTestSupportPrefix.h" "testing/js/WebCoreTestSupportPrefix.cpp" WebCoreTestSupport_SOURCES)
-endif ()
 
 #add_library(WebCoreTestSupport ${WebCoreTestSupport_LIBRARY_TYPE} ${WebCoreTestSupport_SOURCES})
 #add_dependencies(WebCoreTestSupport WebCore WebCoreTestSupportBindings)
