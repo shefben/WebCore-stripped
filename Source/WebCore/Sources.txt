@@ -135,58 +135,12 @@ Modules/indexeddb/shared/IDBTransactionInfo.cpp
 Modules/indexeddb/shared/InProcessIDBServer.cpp
 Modules/indexeddb/shared/IndexKey.cpp
 
-Modules/mediacapabilities/MediaCapabilities.cpp
-Modules/mediacapabilities/NavigatorMediaCapabilities.cpp
 
-Modules/mediacontrols/MediaControlsHost.cpp
 
-Modules/mediarecorder/BlobEvent.cpp
-Modules/mediarecorder/MediaRecorder.cpp
-Modules/mediarecorder/MediaRecorderErrorEvent.cpp
 
-Modules/mediasession/HTMLMediaElementMediaSession.cpp
-Modules/mediasession/MediaRemoteControls.cpp
-Modules/mediasession/MediaSession.cpp
 
-Modules/mediasource/DOMURLMediaSource.cpp
-Modules/mediasource/MediaSource.cpp
-Modules/mediasource/MediaSourceRegistry.cpp
-Modules/mediasource/SampleMap.cpp
-Modules/mediasource/SourceBuffer.cpp
-Modules/mediasource/SourceBufferList.cpp
-Modules/mediasource/VideoPlaybackQuality.cpp
 
-Modules/mediastream/CanvasCaptureMediaStreamTrack.cpp
-Modules/mediastream/MediaDeviceInfo.cpp
-Modules/mediastream/MediaDevices.cpp
-Modules/mediastream/MediaDevicesEnumerationRequest.cpp
-Modules/mediastream/MediaDevicesRequest.cpp
-Modules/mediastream/MediaStream.cpp
-Modules/mediastream/MediaStreamRegistry.cpp
-Modules/mediastream/MediaStreamTrack.cpp
-Modules/mediastream/MediaStreamTrackEvent.cpp
-Modules/mediastream/MediaTrackConstraints.cpp
-Modules/mediastream/NavigatorMediaDevices.cpp
-Modules/mediastream/PeerConnectionBackend.cpp
-Modules/mediastream/RTCCertificate.cpp
-Modules/mediastream/RTCController.cpp
-Modules/mediastream/RTCDTMFSender.cpp
-Modules/mediastream/RTCDTMFToneChangeEvent.cpp
-Modules/mediastream/RTCDataChannel.cpp
-Modules/mediastream/RTCDataChannelEvent.cpp
-Modules/mediastream/RTCIceCandidate.cpp
-Modules/mediastream/RTCIceTransport.cpp
-Modules/mediastream/RTCPeerConnection.cpp
-Modules/mediastream/RTCPeerConnectionIceEvent.cpp
-Modules/mediastream/RTCRtpReceiver.cpp
-Modules/mediastream/RTCRtpSender.cpp
-Modules/mediastream/RTCRtpTransceiver.cpp
-Modules/mediastream/RTCSessionDescription.cpp
-Modules/mediastream/RTCTrackEvent.cpp
-Modules/mediastream/UserMediaController.cpp
-Modules/mediastream/UserMediaRequest.cpp
 
-Modules/mediastream/libwebrtc/LibWebRTCCertificateGenerator.cpp
 
 Modules/notifications/Notification.cpp
 Modules/notifications/NotificationController.cpp
@@ -1839,30 +1793,9 @@ platform/graphics/transforms/TransformState.cpp
 platform/graphics/transforms/TransformationMatrix.cpp
 platform/graphics/transforms/TranslateTransformOperation.cpp
 
-platform/mediacapabilities/MediaEngineConfigurationFactory.cpp
 
-platform/mediarecorder/MediaRecorderPrivateMock.cpp
 
-platform/mediastream/CaptureDeviceManager.cpp
-platform/mediastream/MediaConstraints.cpp
-platform/mediastream/MediaEndpointConfiguration.cpp
-platform/mediastream/MediaStreamPrivate.cpp
-platform/mediastream/MediaStreamTrackPrivate.cpp
-platform/mediastream/RealtimeMediaSourceSupportedConstraints.cpp
-platform/mediastream/RTCIceCandidateDescriptor.cpp
-platform/mediastream/RTCSessionDescriptionDescriptor.cpp
-platform/mediastream/RealtimeIncomingAudioSource.cpp
-platform/mediastream/RealtimeIncomingVideoSource.cpp
-platform/mediastream/RealtimeMediaSource.cpp
-platform/mediastream/RealtimeMediaSourceCenter.cpp
-platform/mediastream/RealtimeMediaSourceFactory.cpp
-platform/mediastream/RealtimeMediaSourceSettings.cpp
-platform/mediastream/RealtimeOutgoingAudioSource.cpp
-platform/mediastream/RealtimeOutgoingVideoSource.cpp
-platform/mediastream/RealtimeVideoCaptureSource.cpp
-platform/mediastream/RealtimeVideoSource.cpp
 
-platform/mediastream/libwebrtc/LibWebRTCProvider.cpp
 
 platform/mock/DeviceOrientationClientMock.cpp
 platform/mock/GeolocationClientMock.cpp
