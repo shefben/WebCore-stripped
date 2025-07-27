@@ -1416,11 +1416,6 @@ set(WebCore_PRIVATE_FRAMEWORK_HEADERS
     workers/service/server/SWServerToContextConnection.h
     workers/service/server/SWServerWorker.h
 
-    xml/XPathExpression.h
-    xml/XPathNSResolver.h
-    xml/XPathNodeSet.h
-    xml/XPathResult.h
-    xml/XPathValue.h
 
     ${WebCore_DERIVED_SOURCES_DIR}/CSSPropertyNames.h
     ${WebCore_DERIVED_SOURCES_DIR}/CSSValueKeywords.h

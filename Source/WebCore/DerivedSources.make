@@ -88,7 +88,6 @@ VPATH = \
     $(WebCore)/workers \
     $(WebCore)/workers/service \
     $(WebCore)/worklets \
-    $(WebCore)/xml \
 #
 
 JS_BINDING_IDLS = \
@@ -1082,17 +1081,6 @@ JS_BINDING_IDLS = \
     $(WebCore)/worklets/PaintWorkletGlobalScope.idl \
     $(WebCore)/worklets/Worklet.idl \
     $(WebCore)/worklets/WorkletGlobalScope.idl \
-    $(WebCore)/xml/DOMParser.idl \
-    $(WebCore)/xml/XMLHttpRequest.idl \
-    $(WebCore)/xml/XMLHttpRequestEventTarget.idl \
-    $(WebCore)/xml/XMLHttpRequestProgressEvent.idl \
-    $(WebCore)/xml/XMLHttpRequestUpload.idl \
-    $(WebCore)/xml/XMLSerializer.idl \
-    $(WebCore)/xml/XPathEvaluator.idl \
-    $(WebCore)/xml/XPathExpression.idl \
-    $(WebCore)/xml/XPathNSResolver.idl \
-    $(WebCore)/xml/XPathResult.idl \
-    $(WebCore)/xml/XSLTProcessor.idl \
     InternalSettingsGenerated.idl \
 #
 
@@ -1352,25 +1340,6 @@ DOMJITAbstractHeapRepository.h : $(WebCore)/domjit/generate-abstract-heap.rb $(W
 
 # --------
 
-# XMLViewer CSS
-
-all : XMLViewerCSS.h
-
-XMLViewerCSS.h : xml/XMLViewer.css
-	$(PYTHON) $(JavaScriptCore_SCRIPTS_DIR)/cssmin.py <"$(WebCore)/xml/XMLViewer.css" > ./XMLViewer.min.css
-	$(PERL) $(JavaScriptCore_SCRIPTS_DIR)/xxd.pl XMLViewer_css ./XMLViewer.min.css XMLViewerCSS.h
-	$(DELETE) XMLViewer.min.css
-
-# --------
-
-# XMLViewer JS
-
-all : XMLViewerJS.h
-
-XMLViewerJS.h : xml/XMLViewer.js
-	$(PYTHON) $(JavaScriptCore_SCRIPTS_DIR)/jsmin.py <"$(WebCore)/xml/XMLViewer.js" > ./XMLViewer.min.js
-	$(PERL) $(JavaScriptCore_SCRIPTS_DIR)/xxd.pl XMLViewer_js ./XMLViewer.min.js XMLViewerJS.h
-	$(DELETE) XMLViewer.min.js
 
 # --------
 
@@ -1532,11 +1501,6 @@ all : $(HTML_TAG_FILES)
 $(HTML_TAG_FILES_PATTERNS) : dom/make_names.pl bindings/scripts/Hasher.pm bindings/scripts/StaticString.pm html/HTMLTagNames.in html/HTMLAttributeNames.in
 	$(PERL) $< --tags $(WebCore)/html/HTMLTagNames.in --attrs $(WebCore)/html/HTMLAttributeNames.in --factory --wrapperFactory $(if $(HTML_FLAGS), --extraDefines "$(HTML_FLAGS)")
 
-XMLNSNames.cpp : dom/make_names.pl bindings/scripts/Hasher.pm bindings/scripts/StaticString.pm xml/xmlnsattrs.in
-	$(PERL) $< --attrs $(WebCore)/xml/xmlnsattrs.in
-
-XMLNames.cpp : dom/make_names.pl bindings/scripts/Hasher.pm bindings/scripts/StaticString.pm xml/xmlattrs.in
-	$(PERL) $< --attrs $(WebCore)/xml/xmlattrs.in
 
 # --------
 
@@ -1683,7 +1647,6 @@ IDL_INCLUDES = \
     $(WebCore)/testing \
     $(WebCore)/workers \
     $(WebCore)/worklets \
-    $(WebCore)/xml
 
 IDL_COMMON_ARGS = $(IDL_INCLUDES:%=--include %) --write-dependencies --outputDir .
 

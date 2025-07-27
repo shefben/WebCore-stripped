@@ -2435,41 +2435,6 @@ worklets/WorkletGlobalScope.cpp
 worklets/WorkletScriptController.cpp
 worklets/PaintWorkletGlobalScope.cpp
 
-xml/DOMParser.cpp
-xml/NativeXPathNSResolver.cpp
-xml/XMLErrors.cpp
-xml/XMLHttpRequest.cpp
-xml/XMLHttpRequestProgressEventThrottle.cpp
-xml/XMLHttpRequestUpload.cpp
-xml/XMLSerializer.cpp
-xml/XMLTreeViewer.cpp
-xml/XPathEvaluator.cpp
-xml/XPathExpression.cpp
-xml/XPathExpressionNode.cpp
-xml/XPathFunctions.cpp
-xml/XPathGrammar.cpp
-xml/XPathNSResolver.cpp
-xml/XPathNodeSet.cpp
-xml/XPathParser.cpp
-xml/XPathPath.cpp
-xml/XPathPredicate.cpp
-xml/XPathResult.cpp
-xml/XPathStep.cpp
-xml/XPathUtil.cpp
-xml/XPathValue.cpp
-xml/XPathVariableReference.cpp
-xml/XSLImportRule.cpp
-xml/XSLStyleSheetLibxslt.cpp
-xml/XSLTExtensions.cpp
-xml/XSLTProcessor.cpp
-xml/XSLTProcessorLibxslt.cpp
-xml/XSLTUnicodeSort.cpp
-
-xml/parser/XMLDocumentParser.cpp
-xml/parser/XMLDocumentParserLibxml2.cpp
-xml/parser/XMLDocumentParserScope.cpp
-
-
 // Derived Sources
 
 CSSValueKeywords.cpp
