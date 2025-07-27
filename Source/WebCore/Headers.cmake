@@ -627,16 +627,6 @@ set(WebCore_PRIVATE_FRAMEWORK_HEADERS
     html/track/VTTCue.h
     html/track/VideoTrack.h
 
-    inspector/InspectorClient.h
-    inspector/InspectorController.h
-    inspector/InspectorFrontendClient.h
-    inspector/InspectorFrontendClientLocal.h
-    inspector/InspectorFrontendHost.h
-    inspector/InspectorOverlay.h
-    inspector/InspectorWebAgentBase.h
-    inspector/PageScriptDebugServer.h
-
-    inspector/agents/InspectorPageAgent.h
 
     loader/AdClickAttribution.h
     loader/CanvasActivityRecord.h

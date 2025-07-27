@@ -58,11 +58,6 @@ INSTALL(FILES ${JAVASCRIPTCORE_HEADERS} DESTINATION "include/JavaScriptCore/")
 
 INSTALL(FILES "${CMAKE_SOURCE_DIR}/cacert.pem" DESTINATION "bin/resources/")
 
-set(WEBINSPECTORUI_DIR "${CMAKE_SOURCE_DIR}/Source/WebInspectorUI")
-
-INSTALL(DIRECTORY "${WEBINSPECTORUI_DIR}/UserInterface/" DESTINATION "inspector")
-INSTALL(FILES "${WEBINSPECTORUI_DIR}/Localizations/en.lproj/localizedStrings.js"
-              DESTINATION "inspector")
 INSTALL(FILES "${DERIVED_SOURCES_JAVASCRIPTCORE_DIR}/inspector/InspectorBackendCommands.js"
               DESTINATION "inspector/Protocol")
 
