@@ -428,15 +428,6 @@ accessibility/AccessibilityTreeItem.cpp
 accessibility/isolatedtree/AXIsolatedTree.cpp
 accessibility/isolatedtree/AXIsolatedTreeNode.cpp
 
-animation/AnimationEffect.cpp
-animation/AnimationPlaybackEvent.cpp
-animation/AnimationTimeline.cpp
-animation/CSSAnimation.cpp
-animation/CSSTransition.cpp
-animation/DeclarativeAnimation.cpp
-animation/DocumentTimeline.cpp
-animation/KeyframeEffect.cpp
-animation/WebAnimation.cpp
 
 bindings/js/JSAudioNodeCustom.cpp
 bindings/js/CachedModuleScriptLoader.cpp
@@ -1561,12 +1552,6 @@ page/WindowFeatures.cpp
 page/WindowFocusAllowedIndicator.cpp
 page/WorkerNavigator.cpp
 
-page/animation/AnimationBase.cpp
-page/animation/CSSAnimationController.cpp
-page/animation/CSSPropertyAnimation.cpp
-page/animation/CompositeAnimation.cpp
-page/animation/ImplicitAnimation.cpp
-page/animation/KeyframeAnimation.cpp
 
 page/csp/ContentSecurityPolicy.cpp
 page/csp/ContentSecurityPolicyClient.cpp
