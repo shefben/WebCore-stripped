@@ -782,7 +782,7 @@ set(WebCore_NON_SVG_IDL_FILES
     worklets/WorkletGlobalScope.idl
 )
 
-if (ENABLE_GAMEPAD
+if (ENABLE_GAMEPAD)
     list(APPEND WebCore_PRIVATE_INCLUDE_DIRECTORIES
         "${WEBCORE_DIR}/Modules/gamepad"
     )
