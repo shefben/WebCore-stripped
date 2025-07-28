@@ -11,7 +11,7 @@ if (POLICY CMP0058)
 endif ()
 
 if (POLICY CMP0038)
-    cmake_policy(SET CMP0038 OLD)
+    cmake_policy(SET CMP0038 NEW)
 endif ()
 
 if(NOT ${CMAKE_VERSION} VERSION_LESS "3.1")
