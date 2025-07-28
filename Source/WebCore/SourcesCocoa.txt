@@ -27,41 +27,12 @@ Modules/plugins/QuickTimePluginReplacement.mm
 Modules/plugins/YouTubePluginReplacement.cpp
 Modules/webdatabase/cocoa/DatabaseManagerCocoa.mm
 
-accessibility/ios/AccessibilityObjectIOS.mm
-accessibility/ios/AXObjectCacheIOS.mm
-accessibility/ios/WebAccessibilityObjectWrapperIOS.mm
 
-accessibility/mac/AXObjectCacheMac.mm
-accessibility/mac/AccessibilityObjectBase.mm
-accessibility/mac/AccessibilityObjectMac.mm
-accessibility/mac/WebAccessibilityObjectWrapperMac.mm @no-unify
-accessibility/mac/WebAccessibilityObjectWrapperBase.mm @no-unify
 
 bindings/js/ScriptControllerMac.mm
 
 
-crypto/CommonCryptoUtilities.cpp
 
-crypto/mac/CommonCryptoDERUtilities.cpp
-crypto/mac/CryptoAlgorithmAES_CBCMac.cpp
-crypto/mac/CryptoAlgorithmAES_CFBMac.cpp
-crypto/mac/CryptoAlgorithmAES_CTRMac.cpp
-crypto/mac/CryptoAlgorithmAES_GCMMac.cpp
-crypto/mac/CryptoAlgorithmAES_KWMac.cpp
-crypto/mac/CryptoAlgorithmECDHMac.cpp
-crypto/mac/CryptoAlgorithmECDSAMac.cpp
-crypto/mac/CryptoAlgorithmHKDFMac.cpp
-crypto/mac/CryptoAlgorithmHMACMac.cpp
-crypto/mac/CryptoAlgorithmPBKDF2Mac.cpp
-crypto/mac/CryptoAlgorithmRSAES_PKCS1_v1_5Mac.cpp
-crypto/mac/CryptoAlgorithmRSASSA_PKCS1_v1_5Mac.cpp
-crypto/mac/CryptoAlgorithmRSA_OAEPMac.cpp
-crypto/mac/CryptoAlgorithmRSA_PSSMac.cpp
-crypto/mac/CryptoAlgorithmRegistryMac.cpp
-crypto/mac/CryptoKeyECMac.cpp
-crypto/mac/CryptoKeyMac.cpp
-crypto/mac/CryptoKeyRSAMac.cpp
-crypto/mac/SerializedCryptoKeyWrapMac.mm
 
 dom/DataTransferMac.mm
 

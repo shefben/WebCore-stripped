@@ -3,7 +3,6 @@ add_definitions(/bigobj -D__STDC_CONSTANT_MACROS)
 list(APPEND WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${CMAKE_BINARY_DIR}/../include/private"
     "${CMAKE_BINARY_DIR}/../include/private/JavaScriptCore"
-    "${WEBCORE_DIR}/accessibility/win"
     "${WEBCORE_DIR}/page/win"
     "${WEBCORE_DIR}/platform/graphics/egl"
     "${WEBCORE_DIR}/platform/graphics/opengl"
@@ -19,9 +18,6 @@ list(APPEND WebCore_INCLUDE_DIRECTORIES
 )
 
 list(APPEND WebCore_SOURCES
-    accessibility/win/AXObjectCacheWin.cpp
-    accessibility/win/AccessibilityObjectWin.cpp
-    accessibility/win/AccessibilityObjectWrapperWin.cpp
 
     editing/win/EditorWin.cpp
 
@@ -113,7 +109,6 @@ list(APPEND WebCore_SOURCES
 )
 
 list(APPEND WebCore_PRIVATE_FRAMEWORK_HEADERS
-    accessibility/win/AccessibilityObjectWrapperWin.h
 
     page/win/FrameWin.h
 

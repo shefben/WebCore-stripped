@@ -56,8 +56,6 @@ set(WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${WEBCORE_DIR}/Modules/webgpu/WHLSL/AST"
     "${WEBCORE_DIR}/Modules/websockets"
     "${WEBCORE_DIR}/Modules/webvr"
-    "${WEBCORE_DIR}/accessibility"
-    "${WEBCORE_DIR}/accessibility/isolatedtree"
     "${WEBCORE_DIR}/bindings"
     "${WEBCORE_DIR}/contentextensions"
     "${WEBCORE_DIR}/css"
@@ -404,9 +402,6 @@ set(WebCore_NON_SVG_IDL_FILES
     Modules/webvr/VRLayerInit.idl
     Modules/webvr/VRPose.idl
     Modules/webvr/VRStageParameters.idl
-
-    accessibility/AccessibilityRole.idl
-    accessibility/AriaAttributes.idl
 
     css/CSSFontFaceRule.idl
     css/CSSImportRule.idl
