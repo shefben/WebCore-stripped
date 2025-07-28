@@ -157,20 +157,6 @@ set(WebCore_PRIVATE_FRAMEWORK_HEADERS
     Modules/websockets/WebSocketFrame.h
     Modules/websockets/WebSocketHandshake.h
 
-    accessibility/AXObjectCache.h
-    accessibility/AXTextStateChangeIntent.h
-    accessibility/AccessibilityListBox.h
-    accessibility/AccessibilityMenuListPopup.h
-    accessibility/AccessibilityMockObject.h
-    accessibility/AccessibilityNodeObject.h
-    accessibility/AccessibilityObject.h
-    accessibility/AccessibilityObjectInterface.h
-    accessibility/AccessibilityRenderObject.h
-    accessibility/AccessibilityScrollView.h
-
-    accessibility/isolatedtree/AXIsolatedTree.h
-    accessibility/isolatedtree/AXIsolatedTreeNode.h
-
 
     bindings/IDLTypes.h
 

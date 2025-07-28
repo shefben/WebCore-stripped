@@ -6,7 +6,6 @@ include(platform/ImageDecoders.cmake)
 list(APPEND WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${DirectX_INCLUDE_DIRS}"
     "${WEBKIT_LIBRARIES_DIR}/include"
-    "${WEBCORE_DIR}/accessibility/win"
     "${WEBCORE_DIR}/page/win"
     "${WEBCORE_DIR}/platform/graphics/egl"
     "${WEBCORE_DIR}/platform/graphics/opengl"

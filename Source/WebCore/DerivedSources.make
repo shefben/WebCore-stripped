@@ -61,12 +61,8 @@ VPATH = \
     $(WebCore)/Modules/webgpu \
     $(WebCore)/Modules/websockets \
     $(WebCore)/Modules/webvr \
-    $(WebCore)/accessibility \
     $(WebCore)/animation \
     $(WebCore)/bindings/js \
-    $(WebCore)/crypto \
-    $(WebCore)/crypto/keys \
-    $(WebCore)/crypto/parameters \
     $(WebCore)/css \
     $(WebCore)/css/typedom \
     $(WebCore)/dom \
@@ -448,8 +444,6 @@ JS_BINDING_IDLS = \
     $(WebCore)/Modules/webvr/VRLayerInit.idl \
     $(WebCore)/Modules/webvr/VRPose.idl \
     $(WebCore)/Modules/webvr/VRStageParameters.idl \
-    $(WebCore)/accessibility/AccessibilityRole.idl \
-    $(WebCore)/accessibility/AriaAttributes.idl \
     $(WebCore)/animation/Animatable.idl \
     $(WebCore)/animation/AnimationEffect.idl \
     $(WebCore)/animation/AnimationPlaybackEvent.idl \
@@ -471,34 +465,6 @@ JS_BINDING_IDLS = \
     $(WebCore)/animation/OptionalEffectTiming.idl \
     $(WebCore)/animation/PlaybackDirection.idl \
     $(WebCore)/animation/WebAnimation.idl \
-    $(WebCore)/crypto/CryptoAlgorithmParameters.idl \
-    $(WebCore)/crypto/CryptoKey.idl \
-    $(WebCore)/crypto/CryptoKeyPair.idl \
-    $(WebCore)/crypto/CryptoKeyUsage.idl \
-    $(WebCore)/crypto/JsonWebKey.idl \
-    $(WebCore)/crypto/RsaOtherPrimesInfo.idl \
-    $(WebCore)/crypto/SubtleCrypto.idl \
-    $(WebCore)/crypto/keys/CryptoAesKeyAlgorithm.idl \
-    $(WebCore)/crypto/keys/CryptoEcKeyAlgorithm.idl \
-    $(WebCore)/crypto/keys/CryptoHmacKeyAlgorithm.idl \
-    $(WebCore)/crypto/keys/CryptoKeyAlgorithm.idl \
-    $(WebCore)/crypto/keys/CryptoRsaHashedKeyAlgorithm.idl \
-    $(WebCore)/crypto/keys/CryptoRsaKeyAlgorithm.idl \
-    $(WebCore)/crypto/parameters/AesCbcCfbParams.idl \
-    $(WebCore)/crypto/parameters/AesCtrParams.idl \
-    $(WebCore)/crypto/parameters/AesGcmParams.idl \
-    $(WebCore)/crypto/parameters/AesKeyParams.idl \
-    $(WebCore)/crypto/parameters/EcKeyParams.idl \
-    $(WebCore)/crypto/parameters/EcdhKeyDeriveParams.idl \
-    $(WebCore)/crypto/parameters/EcdsaParams.idl \
-    $(WebCore)/crypto/parameters/HkdfParams.idl \
-    $(WebCore)/crypto/parameters/HmacKeyParams.idl \
-    $(WebCore)/crypto/parameters/Pbkdf2Params.idl \
-    $(WebCore)/crypto/parameters/RsaHashedImportParams.idl \
-    $(WebCore)/crypto/parameters/RsaHashedKeyGenParams.idl \
-    $(WebCore)/crypto/parameters/RsaKeyGenParams.idl \
-    $(WebCore)/crypto/parameters/RsaOaepParams.idl \
-    $(WebCore)/crypto/parameters/RsaPssParams.idl \
     $(WebCore)/css/CSSFontFaceRule.idl \
     $(WebCore)/css/CSSImportRule.idl \
     $(WebCore)/css/CSSKeyframeRule.idl \
@@ -1627,11 +1593,9 @@ PREPROCESS_IDLS_SCRIPTS = \
 
 IDL_INCLUDES = \
     $(WebCore)/Modules \
-    $(WebCore)/accessibility \
     $(WebCore)/animation \
     $(WebCore)/css \
     $(WebCore)/css/typedom \
-    $(WebCore)/crypto \
     $(WebCore)/dom \
     $(WebCore)/fileapi \
     $(WebCore)/html \
